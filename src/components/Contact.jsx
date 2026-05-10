@@ -286,7 +286,7 @@ export default function Contact() {
                 border: '2px solid rgba(255,255,255,0.1)',
               }}>
                 <img
-                  src="https://drive.google.com/thumbnail?id=1grq8Tu4ZwFtgm5GRKgRknoAbvCi_KjrU&sz=w400"
+                  src="/src/assets/images/sxndy.jpg"
                   alt="Santhosh G"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                 />

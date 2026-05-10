@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-const sxndy = "https://drive.google.com/thumbnail?id=1grq8Tu4ZwFtgm5GRKgRknoAbvCi_KjrU&sz=w400"
+import sxndy from '../assets/images/sxndy.jpg'
 
 const SKILLS = [
   'Python', 'C', 'Java', 'HTML', 'React', 'MongoDB',
@@ -271,6 +271,19 @@ export default function About() {
             transparent 100%
           );
           pointer-events: none;
+        }
+        /* frosted name strip at bottom */
+        .about-photo-frost {
+          position: absolute;
+          bottom: 0; left: 0; right: 0;
+          padding: 0.55rem 1rem;
+          background: rgba(0,0,0,0.48);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-top: 1px solid rgba(255,255,255,0.08);
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
         }
         /* amber border overlay */
         .about-photo-border {
