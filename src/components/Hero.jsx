@@ -92,6 +92,7 @@ export default function Hero() {
           flexDirection: 'column',
           background: '#000',
           overflow: 'hidden',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {/* Amber glow top-left */}
@@ -216,25 +217,35 @@ export default function Hero() {
           transition={{ delay: 0.45, duration: 1.0 }}
           style={{
             position: 'relative', zIndex: 5,
-            flex: '1 1 auto',
-            minHeight: isTablet ? '52vw' : '68vw',
-            maxHeight: isTablet ? '500px' : '380px',
+            flex: '0 0 auto',
+            width: '100%',
+            height: isTablet ? '520px' : '370px',
+            overflow: 'hidden',
             filter: AMBER_FILTER,
           }}
         >
           {/* Blend edges */}
           <div style={{
-            position: 'absolute', top: 0, left: 0, right: 0, height: '30%',
+            position: 'absolute', top: 0, left: 0, right: 0, height: '18%',
             background: 'linear-gradient(to bottom, #000 0%, transparent 100%)',
             zIndex: 2, pointerEvents: 'none',
           }} />
           <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0, height: '20%',
+            position: 'absolute', bottom: 0, left: 0, right: 0, height: '18%',
             background: 'linear-gradient(to top, #000 0%, transparent 100%)',
             zIndex: 2, pointerEvents: 'none',
           }} />
+          {/* Spline needs explicit pixel dimensions to init canvas correctly */}
           <Suspense fallback={<SpinnerFallback />}>
-            <Spline scene={ROBOT_SCENE_URL} style={{ width: '100%', height: '100%' }} />
+            <Spline
+              scene={ROBOT_SCENE_URL}
+              style={{
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%',
+                height: '100%',
+              }}
+            />
           </Suspense>
         </motion.div>
 
